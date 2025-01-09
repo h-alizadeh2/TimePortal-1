@@ -1,0 +1,67 @@
+{% load compress %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    {% compress css %}
+    <link rel="stylesheet"
+        href="{% static 'src/output.css' %}">
+    {% endcompress %}
+</head>
+<header class="bg-blue-600 text-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">My Website</h1>
+    <nav>
+        <ul class="flex space-x-4">
+        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#" class="hover:text-gray-300">About</a></li>
+        <li><a href="#" class="hover:text-gray-300">Services</a></li>
+        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+        </ul> 
+    </nav>
+    </div>
+</header>
+<body class="bg-gray-100">
+    {% block content_wrapper %}
+
+    {%endblock content_wrapper %}
+</body>
+<footer class="bg-gray-800 text-white">
+    <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-wrap justify-between">
+        <!-- Column 1 -->
+        <div class="w-full md:w-1/3 mb-4 md:mb-0">
+        <h4 class="text-lg font-semibold mb-2">About Us</h4>
+        <p class="text-gray-400">
+            We are committed to providing the best services and ensuring customer satisfaction.
+        </p>
+        </div>
+        <!-- Column 2 -->
+        <div class="w-full md:w-1/3 mb-4 md:mb-0">
+        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+        <ul>
+            <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+        </ul>
+        </div>
+        <!-- Column 3 -->
+        <div class="w-full md:w-1/3">
+        <h4 class="text-lg font-semibold mb-2">Follow Us</h4>
+        <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+        </div>
+    </div>
+    <div class="mt-8 text-center text-gray-400">
+        &copy; 2025 My Website. All Rights Reserved.
+    </div>
+    </div>
+</footer>
+</html>
